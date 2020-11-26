@@ -11,9 +11,9 @@
         {
             $this->gatewayDTO = new GatewayDTO();
             $this->url='https://sakilapis.herokuapp.com/Actores/actor/';
-            $this->link= 'https://usuariosapis.herokuapp.com/usuario/';
+            $this->urlUsu= 'https://usuariosapis.herokuapp.com/usuario/';
             $this->urlPel='https://sakilapis.herokuapp.com/Peliculas/Pelicula/';
-            $this->linkCate='https://sakilapis.herokuapp.com/Categorias/Categoria/';
+            $this->urlCate='https://sakilapis.herokuapp.com/Categorias/Categoria/';
         }
         
         public function actor($request)
@@ -85,21 +85,21 @@
             
                 switch ($request){
                     case 'PUT':{
-                        self::http('PUT', $this->gatewayDTO, $this->linkCate );
+                        self::http('PUT', $this->gatewayDTO, $this->urlCate );
                         break;
 
                     }
                     case 'GET':{
                         
-                        self::http('GET', $this->gatewayDTO, $this->linkCate .$_GET["id"] );
+                        self::http('GET', $this->gatewayDTO, $this->urlCate .$_GET["id"] );
                     break;
                     }
                     case 'POST':{
-                        self::http('POST', $this->gatewayDTO, $this->linkCate );
+                        self::http('POST', $this->gatewayDTO, $this->urlCate );
                     break;
                     }
                     case 'DELETE':{
-                        self::http('DELETE', $this->gatewayDTO, $this->linkCate );
+                        self::http('DELETE', $this->gatewayDTO, $this->urlCate );
                     break;
                     }
                     default:{
@@ -122,11 +122,11 @@
                 break;
                 }
                 case 'GET':{
-                    return  self::checktoken('GET', $this->gatewayDTO, $this->link );
+                    return  self::checktoken('GET', $this->gatewayDTO, $this->urlUsu );
                 break;
                 }
                 case 'POST':{
-                    self::http('POST', $this->gatewayDTO, $this->link );
+                    self::http('POST', $this->gatewayDTO, $this->urlUsu );
                 
 
                 break;
@@ -146,7 +146,7 @@
         {            
                 switch ($request){
                     case 'POST':{
-                        self::http('POST', $this->gatewayDTO, $this->link );
+                        self::http('POST', $this->gatewayDTO, $this->urlUsu );
                     break;
                     }
                     default:{
