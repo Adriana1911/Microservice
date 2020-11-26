@@ -16,7 +16,20 @@
             $this->linkCate='https://sakilapis.herokuapp.com/Categorias/Categoria/';
             
         }
-        
+        public function usuario($request)
+        {            
+                switch ($request){
+                    case 'POST':{
+                        self::http('POST', $this->gatewayDTO, $this->url );
+                    break;
+                    }
+                    default:{
+                        echo "Default ";
+                    
+                    }
+
+                }
+           }
         public function actor($request)
         {
             if(self::auth('GET')>0)
@@ -25,7 +38,7 @@
             
                 switch ($request){
                     case 'PUT':{
-                        self::http('PUT', $this->gatewayDTO, $this->url );
+                        self::http('PUT', $this->gatewayDTO, $this->link );
                         break;
 
                     }
@@ -49,7 +62,7 @@
                 }
            }
             else{
-               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido, pon atencion"); 
+               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido"); 
                 echo json_encode($this->gatewayDTO->response);
             }
         }
@@ -74,7 +87,7 @@
                 }
            }
             else{
-               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido, pon atencion"); 
+               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido"); 
                 echo json_encode($this->gatewayDTO->response);
             }
         }
@@ -111,7 +124,7 @@
                 }
            }
             else{
-               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido, pon atencion"); 
+               $this->gatewayDTO->response = array('CODE'=>"ERROR", 'TEXT'=>"Token no valido"); 
                 echo json_encode($this->gatewayDTO->response);
             }
         }
