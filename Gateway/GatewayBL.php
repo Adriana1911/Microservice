@@ -12,9 +12,8 @@
             $this->gatewayDTO = new GatewayDTO();
             $this->url='https://sakilapis.herokuapp.com/Actores/actor/';
             $this->link= 'https://usuariosapis.herokuapp.com/usuario/';
-            $this->linkPeli='https://sakilapis.herokuapp.com/Peliculas/Pelicula/';
+            $this->urlPel='https://sakilapis.herokuapp.com/Peliculas/Pelicula/';
             $this->linkCate='https://sakilapis.herokuapp.com/Categorias/Categoria/';
-            
         }
         
         public function actor($request)
@@ -42,7 +41,7 @@
                     break;
                     }
                     default:{
-                        echo "Default ";
+                        echo "Default";
                     
                     }
 
@@ -62,7 +61,7 @@
                 switch ($request){
                     
                     case 'GET':{
-                        self::http('GET', $this->gatewayDTO, $this->linkPeli . $_GET["id"] );
+                        self::http('GET', $this->gatewayDTO, $this->urlPel . $_GET["id"] );
                     break;
                     }
                     
