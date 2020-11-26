@@ -20,7 +20,7 @@
         {            
                 switch ($request){
                     case 'POST':{
-                        self::http('POST', $this->gatewayDTO, $this->url );
+                        self::http('POST', $this->gatewayDTO, $this->link );
                     break;
                     }
                     default:{
@@ -38,7 +38,7 @@
             
                 switch ($request){
                     case 'PUT':{
-                        self::http('PUT', $this->gatewayDTO, $this->link );
+                        self::http('PUT', $this->gatewayDTO, $this->url );
                         break;
 
                     }
