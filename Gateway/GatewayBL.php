@@ -16,20 +16,7 @@
             $this->linkCate='https://sakilapis.herokuapp.com/Categorias/Categoria/';
             
         }
-        public function usuario($request)
-        {            
-                switch ($request){
-                    case 'POST':{
-                        self::http('POST', $this->gatewayDTO, $this->link );
-                    break;
-                    }
-                    default:{
-                        echo "Default ";
-                    
-                    }
-
-                }
-           }
+        
         public function actor($request)
         {
             if(self::auth('GET')>0)
@@ -155,6 +142,20 @@
                 }
 
             }
+        }
+        public function usuario($request)
+        {            
+                switch ($request){
+                    case 'POST':{
+                        self::http('POST', $this->gatewayDTO, $this->link );
+                    break;
+                    }
+                    default:{
+                        echo "Default ";
+                    
+                    }
+
+                }
         }
 
         public static function http($req, $data, $url)
